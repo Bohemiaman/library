@@ -1,5 +1,9 @@
 body {
+    margin: 0px;
+    padding: 0px;
+    min-height: 100vh;
     background-color: whitesmoke;
+    box-sizing: border-box;
 }
 
 section.grid {
