@@ -27,7 +27,7 @@ class RouterController extends Controller
 
             $this->displayView();
         }else{
-        //    $this->redirect("error404");
+            $this->redirect("error404");
         }
     }
 
