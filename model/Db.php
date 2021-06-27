@@ -5,7 +5,7 @@ class Db
     public static function makeConnection($host, $database, $user, $password)
     {
         if (!isset($connection)) {
-            $connection = new PDO(
+            self::$connection = new PDO(
                 "mysql:host=$host;dbname=$database",
                 $user,
                 $password
@@ -13,7 +13,7 @@ class Db
         }
         return self::$connection;
     }
-    public static function retrieveAll($query, $args)
+    public static function retrieveAll($query, $args = null)
     {
         $stmt = self::$connection->prepare($query);
         $result = $stmt->execute($args);
