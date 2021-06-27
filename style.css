@@ -1,0 +1,13 @@
+body {
+    background-color: black;
+}
+
+section.grid {
+    display: grid;
+    grid-template-columns: 1tr 1tr 1tr 1tr;
+    gap: 20px;
+}
+
+section.grid div {
+    
+}
