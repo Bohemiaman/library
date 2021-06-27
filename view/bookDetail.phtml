@@ -1,5 +1,16 @@
 <article>
-    <h1>Detaily knihy: </h1>
-
+    <h1>Detaily knihy: <?= $book[0] ?></h1>
+    <table>
+        <tr>
+            <td>Autor: </td>
+            <td><?= $book[0] ?> </td>
+        </tr>
+        <tr>
+            <td>Cena: </td>
+            <td><?= $book["price"] ?> </td>
+        </tr>
+    </table>
+    <h2>O knize:</h2>
+    <p class="justify"><?= $book["description"] ?></p>
 
 </article>
