@@ -15,10 +15,22 @@ section.grid {
 article {
     padding: 0% 10%;
     text-align: center;
+    margin: 20px 0px;
 }
 
 section.grid div {
     /*crimson*/
     background-color: #3a9100;
+    text-align: center;
+}
+
+nav,
+footer {
+    display: flex;
+    background-color: #3a9100;
+    padding: 10px;
+}
+footer{
+    justify-content: center;
     text-align: center;
 }
