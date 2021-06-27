@@ -1,5 +1,6 @@
 <?php
 session_start();
+mb_internal_encoding("UTF8");
 spl_autoload_register("autoloadClass");
 function autoloadClass($className)
 {
