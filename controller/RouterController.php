@@ -18,7 +18,7 @@ class RouterController extends Controller
         //nastavení headeru a zobrazení příslušného view
         if (file_exists("controller/$controllerUrl" . "Controller.php")) {
             $controllerClassName = $controllerUrl . "Controller";
-            $this->controller = new $controllerClassName;
+            $this->controller = new $controllerClassName($params);
 
             $this->controller->process();
 
