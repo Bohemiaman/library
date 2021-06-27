@@ -8,6 +8,11 @@ section.grid {
     gap: 20px;
 }
 
+article {
+    padding: 0% 10%;
+    text-align: center;
+}
+
 section.grid div {
     /*crimson*/
     background-color: rgba(220, 20, 60);
