@@ -3,7 +3,7 @@
     <section class="grid">
         <?php foreach ($books as $singleBook) : ?>
             <div>
-                <h1><?= $singleBook[0] ?></h1>
+                <h1><a href="bookDetails/<?= $singleBook[0] ?>"><?= $singleBook[0] ?></a></h1>
                 <span>Autor: <?= $singleBook['name'] . ' ' . $singleBook['surname'] ?></span>
                 <span>Národnost autora: <?= $singleBook["nationality"] ?></span>
             </div>

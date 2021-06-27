@@ -13,4 +13,5 @@ abstract class Controller
         extract($this->data);
         require("view/$this->view.phtml");
     }
+
 }
