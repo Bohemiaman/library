@@ -19,4 +19,10 @@ class Db
         $stmt->execute($args);
         return $stmt->fetchAll();
     }
+    public static function retrieveOne($query, $args = null)
+    {
+        $stmt = self::$connection->prepare($query);
+        $stmt->execute($args);
+        return $stmt->fetch();
+    }
 }
