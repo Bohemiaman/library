@@ -6,7 +6,7 @@ class Db
     {
         if (!isset($connection)) {
             self::$connection = new PDO(
-                "mysql:host=$host;dbname=$database",
+                "mysql:host=$host;dbname=$database;charset=utf8",
                 $user,
                 $password
             );
