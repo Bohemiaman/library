@@ -9,6 +9,6 @@ function autoloadClass($className)
         require("model/$className.php");
     }
 }
-
+Db::makeConnection("127.0.0.1", "library", "root", "");
 $controller = new RouterController();
 $controller->process(array($_SERVER['REQUEST_URI']));
