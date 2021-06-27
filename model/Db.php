@@ -16,7 +16,7 @@ class Db
     public static function retrieveAll($query, $args = null)
     {
         $stmt = self::$connection->prepare($query);
-        $result = $stmt->execute($args);
-        return $result->fetchAll();
+        $stmt->execute($args);
+        return $stmt->fetchAll();
     }
 }
