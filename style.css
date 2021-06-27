@@ -11,6 +11,7 @@ body {
 section.grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-auto-rows: minmax(200px, auto);
     gap: 20px;
 }
 
@@ -22,8 +23,21 @@ article {
 }
 
 section.grid div {
+    display: flex;
     background-color: #3a9100;
     text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+section.grid div h1 {
+    margin: 0px;
+}
+
+section.grid div span {
+    margin-top: 10px;
 }
 
 nav,
