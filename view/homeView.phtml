@@ -1,10 +1,12 @@
 <article>
     <h1>Seznam Všech knih</h1>
     <section class="grid">
-        <div><h1>Test</h1></div>
-        <div><h1>Test</h1></div>
-        <div><h1>Test</h1></div>
-        <div><h1>Test</h1></div>
+        <?php foreach ($books as $singleBook) : ?>
+            <div>
+                <h1><?= $singleBook[0] ?></h1>
+                <span>Autor: <?= $singleBook['name'] . ',' . $singleBook['surname'] ?></span>
+            </div>
+        <?php endforeach ?>
     </section>
 
 </article>
