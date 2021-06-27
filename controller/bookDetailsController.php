@@ -8,7 +8,7 @@ class BookDetailsController extends Controller
         $this->data["book"] = $bookHandler->getSpecificBookByURL($bookURL);
 
         $this->header = array(
-            "title" => "Informace o knize" . $this->data["book"][0], "keyWords" => "knihy, knihovna, čtení", "description" => "Detaily knihy" . $this->data["book"][0]
+            "title" => "Informace o knize " . $this->data["book"][0], "keyWords" => "knihy, knihovna, čtení", "description" => "Detaily knihy " . $this->data["book"][0]
         );
 
         $this->view = 'bookDetail';
