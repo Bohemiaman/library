@@ -28,4 +28,9 @@ abstract class Controller
         } else
             return $x;
     }
+    public function redirect($url)
+    {
+        header("Location: /library/$url");
+        die();
+    }
 }

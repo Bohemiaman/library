@@ -26,6 +26,8 @@ class RouterController extends Controller
             $this->data['description'] = $this->controller->header['description'];
 
             $this->displayView();
+        }else{
+        //    $this->redirect("error404");
         }
     }
 
@@ -55,9 +57,4 @@ class RouterController extends Controller
         return join($text);
     }
 
-    public function redirect($url)
-    {
-        header("Location: /library/$url");
-        die();
-    }
 }
