@@ -8,7 +8,6 @@ class RouterController extends Controller
     {
         $this->view = 'defaultLayout';
         $decodedUrl = $this->decodeURL($params[0]);
-        //ošetření prázdné url -TODO lepší
         $controllerUrl = array_shift($decodedUrl);
         $controllerUrl = $this->parseToCamelCase($controllerUrl, "-");
 
@@ -20,7 +19,7 @@ class RouterController extends Controller
             $controllerClassName = $controllerUrl . "Controller";
             $this->controller = new $controllerClassName();
 
-            $this->controller->process($params);
+            $this->controller->process($decodedUrl);
 
             $this->data['title'] = $this->controller->header['title'];
             $this->data['keyWords'] = $this->controller->header['keyWords'];
