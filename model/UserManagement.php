@@ -12,8 +12,14 @@ class UserManagement
         $userInformation = $this->selectUserFromDb($login);
         //ověření loginů je redundantní, ale pomůže to ošetřit chyby alespoň
         $password_hash = password_hash($password, PASSWORD_BCRYPT);
-        return (($userInformation['login'] == $login) && ($userInformation['password_hash'] == $password_hash));
+        $status = (($userInformation['login'] == $login) && ($userInformation['password_hash'] == $password_hash));
+
+        //hash hesla v session nechci
+        unset($userInformation["password_hash"]);
+        $_SESSION["userInformation"] = $userInformation;
+        return $status;
     }
+
     function registerUser($login, $password, $displayName, $admin = 0): bool
     {
         //TODO REGEX na validaci do guard clause, nejspíše pomocí další metody
