@@ -11,7 +11,9 @@ class LoginController extends Controller
         if (isset($_POST['login'])) {
             $userManagement = new UserManagement();
             //FIXME - ošetření
-            $userManagement->loginUser($_POST["login"],$_POST["username"])
+            if ($userManagement->loginUser($_POST["username"], $_POST["password"])) {
+                $this->redirect("home");
+            }
         }
     }
 }

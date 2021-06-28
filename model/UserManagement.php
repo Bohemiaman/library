@@ -11,13 +11,15 @@ class UserManagement
     {
         $userInformation = $this->selectUserFromDb($login);
         //ověření loginů je redundantní, ale pomůže to ošetřit chyby alespoň
-        $password_hash = password_hash($password, PASSWORD_BCRYPT);
-        $status = (($userInformation['login'] == $login) && ($userInformation['password_hash'] == $password_hash));
-
+        $password_hash = password_verify($password, PASSWORD_BCRYPT);
+        $authorized = (($userInformation['login'] == $login) && password_verify($password, $userInformation["password_hash"]));
+        if (!$authorized) {
+            return false;
+        }
         //hash hesla v session nechci
         unset($userInformation["password_hash"]);
         $_SESSION["userInformation"] = $userInformation;
-        return $status;
+        return $authorized;
     }
 
     function registerUser($login, $password, $displayName, $admin = 0): bool
