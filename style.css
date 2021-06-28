@@ -82,3 +82,29 @@ td {
 .login {
     margin-left: auto;
 }
+
+form {
+    display: flex;
+    justify-content: stretch;
+    flex-direction: column;
+    max-width: 540px;
+    margin: auto;
+    border: 1px solid #3a9100;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+form>div {
+    display: flex;
+    justify-content: stretch;
+    align-items: stretch;
+}
+
+form>div input {
+    flex-grow: 1;
+}
+
+form>div label {
+    text-align: left;
+    width: 100px;
+}
