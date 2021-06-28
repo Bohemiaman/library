@@ -14,7 +14,7 @@ class UserManagement
         $password_hash = password_hash($password, PASSWORD_BCRYPT);
         return (($userInformation['login'] == $login) && ($userInformation['password_hash'] == $password_hash));
     }
-    function registerUser($login, $password, $displayName, $admin = false): bool
+    function registerUser($login, $password, $displayName, $admin = 0): bool
     {
         //TODO REGEX na validaci do guard clause, nejspíše pomocí další metody
         if (false) {
@@ -23,7 +23,7 @@ class UserManagement
 
         $password_hash = password_hash($password, PASSWORD_BCRYPT);
         $executed = Db::executeQuery(
-            "INSERT INTO `users`(`login`, `displayName`, `password_hash`, `admin`) VALUES ( :login, :password_hash, :displayName, :admin)",
+            "INSERT INTO `users`(`login`, `displayName`, `password_hash`, `admin`) VALUES ( :login, :displayName, :password_hash, :admin)",
             [':login' => $login, ':password_hash' => $password_hash, ':displayName' => $displayName, 'admin' => $admin]
         );
         return $executed;
