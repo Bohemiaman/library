@@ -20,6 +20,12 @@ class BookManager
     }
     function addNewBook($bookName, $authorId, $price, $description)
     {
-        
+        //TODO validace
+        $url = str_replace(' ', "_", $bookName);
+        $url = StringOperator::normalize($url);
+        return Db::executeQuery(
+            "INSERT INTO `books`(`name`, `author_id`, `price`, `description`, `url`) VALUES (:name ,:authorId,:price,:description,:url)",
+            [":name" => $bookName, ":authorId" => $authorId, ":price" => $price, ":description" => $description, ":url" => $url,]
+        );
     }
 }

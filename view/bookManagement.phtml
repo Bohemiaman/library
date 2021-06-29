@@ -1,5 +1,8 @@
 <article>
     <h1>Správa knih</h1>
+    <?php if (isset($successMessage)) : ?>
+        <p><?= $successMessage ?></p>
+    <?php endif; ?>
     <table>
         <tr>
             <th>Název knihy</th>
@@ -25,8 +28,15 @@
                 <label for="name">Název: </label><input type="text" name="name">
             </div>
             <div><label for="price">Cena: </label><input type="number" min="0" name="price"></div>
-            <div><label for="username">Cena: </label><textarea name="password"></textarea></div>
-            <input name="login" type="submit" value="login">
+            <div><label for="authorId">Cena: </label>
+                <select name="authorId" id="">
+                    <?php foreach ($authors as $author) : ?>
+                        <option value="<?= $author["author_id"] ?>"><?= $author["name"] . ' ' . $author["surname"] ?></option>
+                    <?php endforeach ?>
+                </select>
+            </div>
+            <div><label for="description">Popis: </label><textarea name="description"></textarea></div>
+            <input name="addNewBook" type="submit" value="Přidat">
         </form>
     </div>
 </article>
