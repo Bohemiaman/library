@@ -18,7 +18,7 @@ class UserManagement
         }
         //hash hesla v session nechci
         unset($userInformation["password_hash"]);
-        $_SESSION["userInformation"] = $userInformation;
+        $_SESSION[KEY_TO_USER_INFORMATION] = $userInformation;
         return $authorized;
     }
 
@@ -35,5 +35,10 @@ class UserManagement
             [':login' => $login, ':password_hash' => $password_hash, ':displayName' => $displayName, 'admin' => $admin]
         );
         return $executed;
+    }
+
+    function checkIfUserIsLoggedIn(): bool
+    {
+        return isset($_SESSION[KEY_TO_USER_INFORMATION]);
     }
 }
