@@ -7,7 +7,7 @@ class HomeController extends Controller
             "title" => "Vítejte v knihovním systému eLibrary", "keyWords" => "knihy, knihovna, čtení", "description" => "Úvodní stránka knihovny eLibrary."
         );
         $this->view = 'homeView';
-        $bookHandler = new BookHandler();
-        $this->data["books"] = $bookHandler->getAllBooks();
+        $bookManager = new BookManager();
+        $this->data["books"] = $bookManager->getAllBooks();
     }
 }
