@@ -12,7 +12,8 @@ class UserManagement
         $userInformation = $this->selectUserFromDb($login);
         //ověření loginů je redundantní, ale pomůže to ošetřit chyby alespoň
         $password_hash = password_verify($password, PASSWORD_BCRYPT);
-        $authorized = (($userInformation['login'] == $login) && password_verify($password, $userInformation["password_hash"]));
+        $authorized = (strtolower(($userInformation['login'])) == strtolower($login) && password_verify($password, $userInformation["password_hash"]));
+
         if (!$authorized) {
             return false;
         }
