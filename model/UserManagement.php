@@ -42,6 +42,13 @@ class UserManagement
     {
         return isset($_SESSION[KEY_TO_USER_INFORMATION]);
     }
+    function checkIfUserIsAdmin(): bool
+    {
+        if (!$this->checkIfUserIsLoggedIn()) {
+            return false;
+        }
+        return ($_SESSION[KEY_TO_USER_INFORMATION]['admin'] == 1);
+    }
     function logoutUser()
     {
         session_destroy();
