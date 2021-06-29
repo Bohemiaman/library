@@ -106,6 +106,10 @@ form>div {
     justify-content: stretch;
     align-items: stretch;
 }
+textarea{
+    width: auto;
+    flex-grow: 1;
+}
 
 form>div input {
     flex-grow: 1;
