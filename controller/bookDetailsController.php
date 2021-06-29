@@ -4,7 +4,7 @@ class BookDetailsController extends Controller
     public function process($params = array())
     {
         $bookURL = $params[0];
-        $bookHandler = new BookHandler();
+        $bookHandler = new BookManager();
         $this->data["book"] = $bookHandler->getSpecificBookByURL($bookURL);
         if ($this->data["book"] == null) {
             $this->redirect("error404");

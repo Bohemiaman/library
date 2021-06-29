@@ -1,5 +1,5 @@
 <?php
-class BookHandler
+class BookManager
 {
     function getAllBooks()
     {
