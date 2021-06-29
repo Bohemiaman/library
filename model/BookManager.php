@@ -18,4 +18,8 @@ class BookManager
 
         return $book;
     }
+    function addNewBook($bookName, $authorId, $price, $description)
+    {
+        
+    }
 }

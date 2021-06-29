@@ -1,0 +1,21 @@
+<article>
+    <h1>Správa knih</h1>
+    <table>
+        <tr>
+            <th>Název knihy</th>
+            <th>Cena</th>
+            <th>URL</th>
+            <th>Jméno autora</th>
+            <th>Národnost autora</th>
+        </tr>
+        <?php foreach ($books as $key => $book) : ?>
+            <tr>
+                <td><?= $book[0] ?></td>
+                <td><?= $book[5] ?></td>
+                <td><?= $book[1] ?></td>
+                <td><?= $book[2] . ' ' . $book[3] ?></td>
+                <td><?= $book[4] ?></td>
+            </tr>
+        <?php endforeach; ?>
+    </table>
+</article>
