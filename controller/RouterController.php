@@ -25,14 +25,17 @@ class RouterController extends Controller
             $this->data['keyWords'] = $this->controller->header['keyWords'];
             $this->data['description'] = $this->controller->header['description'];
 
-            if ($this->checkIfUserIsLoggedIn()) {
+            $userManager = new UserManagement();
+            if ($userManager->checkIfUserIsLoggedIn()) {
                 $this->data['userHref'] = "logout";
                 $this->data['userText'] = "Odhlásit";
+                if ($userManager->checkIfUserIsAdmin()) {
+                    $this->data['admin'] = true;
+                }
             } else {
                 $this->data['userHref'] = "login";
                 $this->data['userText'] = "Přihlášení";
             }
-
 
             $this->displayView();
         } else {

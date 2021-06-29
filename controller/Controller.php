@@ -33,9 +33,11 @@ abstract class Controller
         header("Location: /library/$url");
         die();
     }
+    /*
     public function checkIfUserIsLoggedIn(): bool
     {
         $userManagement = new UserManagement();
         return $userManagement->checkIfUserIsLoggedIn();
     }
+    */
 }
