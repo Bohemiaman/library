@@ -106,7 +106,8 @@ form>div {
     justify-content: stretch;
     align-items: stretch;
 }
-textarea{
+
+textarea {
     width: auto;
     flex-grow: 1;
 }
@@ -114,6 +115,10 @@ textarea{
 form>div input {
     flex-grow: 1;
     margin: 10px 0px;
+}
+
+form input[type=submit] {
+    margin-top: 10px;
 }
 
 form>div label {
