@@ -25,8 +25,17 @@ class RouterController extends Controller
             $this->data['keyWords'] = $this->controller->header['keyWords'];
             $this->data['description'] = $this->controller->header['description'];
 
+            if ($this->checkIfUserIsLoggedIn()) {
+                $this->data['userHref'] = "logout";
+                $this->data['userText'] = "Odhlásit";
+            } else {
+                $this->data['userHref'] = "login";
+                $this->data['userText'] = "Přihlášení";
+            }
+
+
             $this->displayView();
-        }else{
+        } else {
             $this->redirect("error404");
         }
     }
@@ -56,5 +65,4 @@ class RouterController extends Controller
         }
         return join($text);
     }
-
 }

@@ -42,4 +42,8 @@ class UserManagement
     {
         return isset($_SESSION[KEY_TO_USER_INFORMATION]);
     }
+    function logoutUser()
+    {
+        session_destroy();
+    }
 }
