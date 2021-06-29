@@ -18,4 +18,15 @@
             </tr>
         <?php endforeach; ?>
     </table>
+    <div>
+        <h1>Přidání nové knihy</h1>
+        <form action="bookManagement" method="post">
+            <div>
+                <label for="name">Název: </label><input type="text" name="name"></input>
+            </div>
+            <div><label for="price">Cena: </label><input type="number" min="0" name="price"></input></div>
+            <div><label for="username">Cena: </label><textarea name="password"></textarea></div>
+            <input name="login" type="submit" value="login">
+        </form>
+    </div>
 </article>
