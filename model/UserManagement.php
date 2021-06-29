@@ -45,5 +45,7 @@ class UserManagement
     function logoutUser()
     {
         session_destroy();
+        //samotné destroy nebylo dost rychlé
+        unset($_SESSION);
     }
 }
