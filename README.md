@@ -3,4 +3,4 @@
  Vytvořil jsem výpis knih, login se dvěma uživateli ( Admin / xHeslo1234) - administrátor a ( Franta_bezny_uzivatel / xHeslo123 ),
  možnost zobrazit detaily o knize a možnost přidat knihu.
  Chybí stránkování a kontrola dat na straně serveru (i na straně uživatele).
- 
+ Databáze obsahuje sloupec nationality, který by měl být vyřešen spíše další tabulkou.
