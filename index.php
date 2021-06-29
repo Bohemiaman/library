@@ -1,4 +1,5 @@
 <?php
+define('KEY_TO_USER_INFORMATION', 'userInformation'); //do souboru constants možná, ale tady je pouze jedna
 session_start();
 mb_internal_encoding("UTF8");
 spl_autoload_register("autoloadClass");
